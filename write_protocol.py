@@ -11,11 +11,11 @@ def re_connect():
 def write_protocol(type, ID, ISBN, Anzahl, user):
     cursor, conn = re_connect()
     zeit=round(time.time())
-    cursor.execute("INSERT INTO protocolaus (ID, type, schuelerID, ISBN, Anzahl, unix, user) VALUES (?, ?, ?, ?, ?, ?, ?)", (type, ID, ISBN, Anzahl, zeit, user))
+    cursor.execute("INSERT INTO protocolaus (type, schuelerID, ISBN, Anzahl, unix, user) VALUES (?, ?, ?, ?, ?, ?)", (type, ID, ISBN, Anzahl, zeit, user))
     conn.commit()
 
 def write_login(user, erfolgreich, IP):
     cursor, conn = re_connect()
     zeit=round(time.time())
-    cursor.execute("INSERT INTO protocollogin (ID, user, unix, erfolgreich, IP) VALUES (?, ?, ?, ?, ?)", (3, user, zeit, erfolgreich, IP))
+    cursor.execute("INSERT INTO protocollogin (user, unix, erfolgreich, IP) VALUES (?, ?, ?, ?)", (3, user, zeit, erfolgreich, IP))
     conn.commit()
