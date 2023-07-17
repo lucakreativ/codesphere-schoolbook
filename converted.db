@@ -83,7 +83,7 @@ PRIMARY KEY (`studentid`)
 DROP TABLE IF EXISTS `protocolaus`;
 
 CREATE TABLE `protocolaus` (
-`ID` int NOT NULL ,
+`ID` int NOT NULL AUTOINCREMENT,
 `type` int DEFAULT NULL,
 `schuelerID` TEXT   DEFAULT NULL,
 `ISBN` TEXT   DEFAULT NULL,
@@ -99,7 +99,7 @@ INSERT INTO `protocolaus` VALUES (12041,0,'40288081-7f6e2d25-017f-751d2313-0bbf'
 DROP TABLE IF EXISTS `protocollogin`;
 
 CREATE TABLE `protocollogin` (
-`ID` int NOT NULL ,
+`ID` int NOT NULL AUTOINCREMENT,
 `user` TEXT   DEFAULT NULL,
 `unix` int DEFAULT NULL,
 `erfolgreich` tinyINTEGER DEFAULT NULL,
