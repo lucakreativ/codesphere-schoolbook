@@ -1,4 +1,4 @@
-from mysql.connector import MySQLConnection
+import sqlite3
 import pandas as pd
 import os.path
 import random
@@ -12,10 +12,8 @@ import cryption
 import threading
 
 def re_connect():
-    dbconfig = read_db_config()
-    conn = MySQLConnection(**dbconfig)
-    cursor = conn.cursor()
-
+    connection=sqlite3.connect("database.db")
+    cursor=connection.cursor()
     return cursor, conn
 
 

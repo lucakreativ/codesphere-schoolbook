@@ -1,4 +1,4 @@
-from mysql.connector import MySQLConnection
+import sqlite3
 from read_config import read_db_config
 from hash_func import hash_func
 

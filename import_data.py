@@ -1,4 +1,4 @@
-from mysql.connector import MySQLConnection
+import sqlite3
 import pandas
 import msoffcrypto
 import io
@@ -10,10 +10,8 @@ from read_config import read_db_config
 state="INSERT INTO schueler (ID, Stufe, Klasse, Vorname, Nachname, Religion, Fremdsp1, Fremdsp2, Fremdsp3) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
 
 def re_conn():
-    dbconfig = read_db_config()
-    conn = MySQLConnection(**dbconfig)
-    cursor = conn.cursor()
-
+    connection=sqlite3.connect("database.db")
+    cursor=connection.cursor()
     return cursor, conn
 
 def delete():
@@ -26,7 +24,7 @@ def exe(data):
 
 #['Klasse', 'Vornamen', 'Nachname', 'ID', 'Fremdsprache 1.', 'Fremdsprache 2.', 'Fremdsprache 3.', 'Religion', 'Alle besuchten Pflichtfächer']
 #   0           1           2         3             4               5                   6               7                   8
-    values=[]
+    values=[]    
 
 
     klasse=data[0]
