@@ -10,7 +10,7 @@ from read_config import read_db_config
 def re_conn():
     connection=sqlite3.connect("database.db")
     cursor=connection.cursor()
-    return cursor, conn
+    return cursor, connection
 
 
 

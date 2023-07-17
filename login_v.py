@@ -8,7 +8,7 @@ from read_config import read_db_config
 def re_connect():
     connection=sqlite3.connect("database.db")
     cursor=connection.cursor()
-    return cursor, conn
+    return cursor, connection
 
 def check_data(user):
     cursor, conn = re_connect()

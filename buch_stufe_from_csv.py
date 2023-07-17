@@ -5,7 +5,7 @@ import csv
 def re_connect():
     connection=sqlite3.connect("database.db")
     cursor=connection.cursor()
-    return cursor, conn
+    return cursor, connection
 
 cursor, conn = re_connect()
 with open("../buchstufe.csv", mode="r") as file:

@@ -5,7 +5,7 @@ import time
 def re_connect():
     connection=sqlite3.connect("database.db")
     cursor=connection.cursor()
-    return cursor, conn
+    return cursor, connection
 
 
 def write_protocol(type, ID, ISBN, Anzahl, user):

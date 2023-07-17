@@ -9,7 +9,7 @@ import pandas as pd
 def re_connect():
     connection=sqlite3.connect("database.db")
     cursor=connection.cursor()
-    return cursor, conn
+    return cursor, connection
 
 def show_one_user(username):
     cursor, conn = re_connect()

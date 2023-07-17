@@ -12,7 +12,7 @@ state="INSERT INTO schueler (ID, Stufe, Klasse, Vorname, Nachname, Religion, Fre
 def re_conn():
     connection=sqlite3.connect("database.db")
     cursor=connection.cursor()
-    return cursor, conn
+    return cursor, connection
 
 def delete():
     cursor, conn = re_conn()

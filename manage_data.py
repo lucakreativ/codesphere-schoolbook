@@ -14,7 +14,7 @@ import threading
 def re_connect():
     connection=sqlite3.connect("database.db")
     cursor=connection.cursor()
-    return cursor, conn
+    return cursor, connection
 
 
 def get_unused_ID():
