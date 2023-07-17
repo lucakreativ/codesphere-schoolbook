@@ -269,7 +269,7 @@ def book_by_user(ID, changed=None):
         
         Titel=buecher.iloc[num]["Titel/ISBN"]
         temp='<input type="hidden" name="b%s" value="%s">' % (num, ISBN)
-        cursor.execute("SELECT IF(stufe + abgeben > ? AND stufe<=?, 1, 0) FROM buchstufe WHERE ISBN = ?", (stufe, stufe, ISBN))
+        cursor.execute("SELECT IIF(stufe + abgeben > ? AND stufe<=?, 1, 0) FROM buchstufe WHERE ISBN = ?", (stufe, stufe, ISBN))
         data=cursor.fetchall()
         if len(data)==0 or data[0]==(0,):
             if abgeben==True and anzahl>0:
